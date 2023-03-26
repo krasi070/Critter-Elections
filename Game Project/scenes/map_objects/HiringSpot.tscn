@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/shaders/OutlineShader.tres" type="Shader" id=1]
+[ext_resource path="res://scripts/map/hiring_spot.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/map_objects/beehive.png" type="Texture" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/line_color = Color( 0, 0, 0, 1 )
+shader_param/line_thickness = 2.0
+
+[node name="HiringSpot" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 1 )
+texture = ExtResource( 3 )
+centered = false

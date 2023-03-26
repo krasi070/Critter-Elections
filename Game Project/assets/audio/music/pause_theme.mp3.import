@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/pause_theme.mp3-197bab3fcc9cfa82615fce0aa50ca776.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/pause_theme.mp3"
+dest_files=[ "res://.import/pause_theme.mp3-197bab3fcc9cfa82615fce0aa50ca776.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

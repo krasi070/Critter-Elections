@@ -1,0 +1,1050 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://assets/fonts/nokiafc22.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/ui/rules_container.gd" type="Script" id=3]
+[ext_resource path="res://scenes/ui/buttons/ActionButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/player_characters/team_a_campaigner.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/workers/swift_bee.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/event_characters/steal_supporter_event_character.png" type="Texture" id=8]
+[ext_resource path="res://scenes/ui/buttons/DirectionalButton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/sprites/workers/nine_to_five_bee.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/event_characters/supporter_event_character.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/player_characters/team_a_gatherer.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/gathering_spots/cheese_spot.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/gathering_spots/beehive.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/event_characters/ice_event_character.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/gathering_spots/leaf_spot.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/gathering_spots/ice_spot.png" type="Texture" id=20]
+[ext_resource path="res://assets/styles/boxes/PinkBoxStyle.tres" type="StyleBox" id=21]
+[ext_resource path="res://assets/sprites/symbols/supporter.png" type="Texture" id=22]
+[ext_resource path="res://assets/styles/boxes/CheeseBoxStyle.tres" type="StyleBox" id=23]
+[ext_resource path="res://assets/styles/boxes/OrangeBoxStyle.tres" type="StyleBox" id=24]
+[ext_resource path="res://assets/sprites/symbols/money.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/symbols/honeycomb.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/symbols/ice.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/areas/green_area.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/areas/urban_area.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/areas/snowy_area.png" type="Texture" id=30]
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="RulesContainer" type="VBoxContainer"]
+margin_top = 668.0
+margin_right = 580.0
+margin_bottom = 1548.0
+custom_constants/separation = 20
+script = ExtResource( 3 )
+
+[node name="Page1" type="Panel" parent="."]
+margin_right = 580.0
+margin_bottom = 640.0
+rect_min_size = Vector2( 580, 640 )
+custom_styles/panel = ExtResource( 21 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Page1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 22.0
+margin_top = 22.0
+margin_right = -22.0
+margin_bottom = -22.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page1/MarginContainer"]
+margin_right = 536.0
+margin_bottom = 596.0
+
+[node name="SettingTitle" type="Label" parent="Page1/MarginContainer/VBoxContainer"]
+margin_right = 536.0
+margin_bottom = 83.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+text = "Get Elected as Mayor!
+"
+align = 1
+autowrap = true
+
+[node name="SettingTitle2" type="Label" parent="Page1/MarginContainer/VBoxContainer"]
+margin_top = 87.0
+margin_right = 536.0
+margin_bottom = 170.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+text = "Be the top candidate in the most areas to get elected!"
+align = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Page1/MarginContainer/VBoxContainer"]
+margin_top = 174.0
+margin_right = 536.0
+margin_bottom = 361.0
+size_flags_vertical = 3
+custom_constants/separation = 25
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page1/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 21.0
+margin_right = 167.0
+margin_bottom = 187.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Page1/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 31.0
+margin_right = 146.0
+margin_bottom = 127.0
+rect_min_size = Vector2( 96, 96 )
+texture = ExtResource( 28 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Page1/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 131.0
+margin_right = 146.0
+margin_bottom = 156.0
+custom_fonts/font = SubResource( 5 )
+text = "Green Area"
+align = 1
+valign = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page1/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 192.0
+margin_right = 343.0
+margin_bottom = 187.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Page1/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 31.0
+margin_right = 151.0
+margin_bottom = 127.0
+rect_min_size = Vector2( 96, 96 )
+texture = ExtResource( 30 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Page1/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 131.0
+margin_right = 151.0
+margin_bottom = 156.0
+custom_fonts/font = SubResource( 5 )
+text = "Snowy Area"
+align = 1
+valign = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Page1/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 368.0
+margin_right = 514.0
+margin_bottom = 187.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Page1/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 31.0
+margin_right = 146.0
+margin_bottom = 127.0
+rect_min_size = Vector2( 96, 96 )
+texture = ExtResource( 29 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Page1/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 131.0
+margin_right = 146.0
+margin_bottom = 156.0
+custom_fonts/font = SubResource( 5 )
+text = "Urban Area"
+align = 1
+valign = 1
+
+[node name="SettingTitle3" type="Label" parent="Page1/MarginContainer/VBoxContainer"]
+margin_top = 365.0
+margin_right = 536.0
+margin_bottom = 405.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+text = "Increase your voters by:"
+align = 1
+autowrap = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page1/MarginContainer/VBoxContainer"]
+margin_top = 409.0
+margin_right = 536.0
+margin_bottom = 596.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Page1/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_right = 536.0
+margin_bottom = 87.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Control" type="Control" parent="Page1/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+visible = false
+margin_right = 120.0
+margin_bottom = 66.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HowToWinText" type="Label" parent="Page1/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 336.0
+margin_bottom = 87.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "1. Picking up small snails."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="Page1/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 340.0
+margin_right = 388.0
+margin_bottom = 87.0
+texture = ExtResource( 22 )
+stretch_mode = 6
+
+[node name="Control2" type="Control" parent="Page1/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 392.0
+margin_right = 536.0
+margin_bottom = 87.0
+rect_min_size = Vector2( 144, 0 )
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Page1/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 91.0
+margin_right = 536.0
+margin_bottom = 187.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Control" type="Control" parent="Page1/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HowToWinText" type="Label" parent="Page1/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 336.0
+margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "2. Making deals with pigeons to spread propaganda."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="Page1/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 340.0
+margin_right = 436.0
+margin_bottom = 96.0
+texture = ExtResource( 11 )
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="Page1/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 440.0
+margin_right = 536.0
+margin_bottom = 96.0
+texture = ExtResource( 8 )
+stretch_mode = 6
+
+[node name="Control2" type="Control" parent="Page1/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+margin_left = 578.0
+margin_right = 578.0
+margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SettingText" type="Label" parent="Page1/MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 403.0
+margin_right = 536.0
+margin_bottom = 596.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "The critters of Critter Island are holding elections and you and your teammate are running for mayor and deputy mayor! Play as one of 2 distinct roles: Candidate or Bee Manager. Earn money and spend it in various ways to attract more voters!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HowToWinTitle" type="Label" parent="Page1/MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 365.0
+margin_right = 536.0
+margin_bottom = 405.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+text = "How to Win"
+align = 1
+
+[node name="HowToWinText" type="Label" parent="Page1/MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 387.0
+margin_right = 536.0
+margin_bottom = 596.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "Critter Island is made up of 3 distinct areas: the Green Area, the Snowy Area and the Urban Area. To get elected your team needs to be leading in more areas than any other team. To lead in an area, you need to have the most votes in it."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Page2" type="Panel" parent="."]
+margin_top = 660.0
+margin_right = 580.0
+margin_bottom = 1300.0
+rect_min_size = Vector2( 580, 640 )
+custom_styles/panel = ExtResource( 23 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Page2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 22.0
+margin_top = 22.0
+margin_right = -22.0
+margin_bottom = -22.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page2/MarginContainer"]
+margin_right = 536.0
+margin_bottom = 596.0
+
+[node name="CandidateRoleTitle" type="Label" parent="Page2/MarginContainer/VBoxContainer"]
+margin_right = 536.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+text = "Play in a team of 2!
+Choose 1 of 2 unique roles!
+"
+align = 1
+autowrap = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Page2/MarginContainer/VBoxContainer"]
+margin_top = 130.0
+margin_right = 536.0
+margin_bottom = 361.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page2/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 96.0
+margin_bottom = 231.0
+alignment = 1
+
+[node name="CandidateTextureRect" type="TextureRect" parent="Page2/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 41.0
+margin_right = 96.0
+margin_bottom = 137.0
+texture = ExtResource( 6 )
+stretch_mode = 4
+
+[node name="CandidateTextureRect2" type="TextureRect" parent="Page2/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 141.0
+margin_right = 96.0
+margin_bottom = 189.0
+texture = ExtResource( 25 )
+stretch_mode = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page2/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 100.0
+margin_right = 536.0
+margin_bottom = 231.0
+size_flags_horizontal = 3
+
+[node name="CandidateRoleTitle2" type="Label" parent="Page2/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+margin_right = 436.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+text = "Candidate"
+align = 1
+
+[node name="CandidateRoleText" type="Label" parent="Page2/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+margin_top = 44.0
+margin_right = 436.0
+margin_bottom = 231.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "Their job is to interact with non-player critters and make deals to earn money. Candidates use that money to make deals with pigeons for votes."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Page2/MarginContainer/VBoxContainer"]
+margin_top = 365.0
+margin_right = 536.0
+margin_bottom = 596.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page2/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 96.0
+margin_bottom = 231.0
+alignment = 1
+
+[node name="BeeManagerTextureRect" type="TextureRect" parent="Page2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 25.0
+margin_right = 96.0
+margin_bottom = 121.0
+texture = ExtResource( 12 )
+stretch_mode = 4
+
+[node name="Bee1" type="TextureRect" parent="Page2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 125.0
+margin_right = 96.0
+margin_bottom = 205.0
+texture = ExtResource( 10 )
+stretch_mode = 4
+
+[node name="Bee2" type="TextureRect" parent="Page2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
+margin_top = 184.0
+margin_right = 96.0
+margin_bottom = 264.0
+texture = ExtResource( 7 )
+stretch_mode = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Page2/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 100.0
+margin_right = 536.0
+margin_bottom = 231.0
+size_flags_horizontal = 3
+
+[node name="BeeManagerRoleTitle" type="Label" parent="Page2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 436.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+text = "Bee Manager"
+align = 1
+
+[node name="BeeManagerRoleText" type="Label" parent="Page2/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 44.0
+margin_right = 436.0
+margin_bottom = 231.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "They hire worker bees and send them off to gather resources at various locations. Bee Managers gather the resources Candidates needs to make deals."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page2/MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 455.0
+margin_right = 536.0
+margin_bottom = 596.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Page2/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_right = 536.0
+margin_bottom = 112.0
+alignment = 1
+
+[node name="Building1" type="TextureRect" parent="Page2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 46.0
+margin_right = 142.0
+margin_bottom = 112.0
+texture = ExtResource( 15 )
+stretch_mode = 4
+
+[node name="Building2" type="TextureRect" parent="Page2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 146.0
+margin_right = 258.0
+margin_bottom = 112.0
+texture = ExtResource( 14 )
+stretch_mode = 4
+
+[node name="Building3" type="TextureRect" parent="Page2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 262.0
+margin_right = 374.0
+margin_bottom = 112.0
+texture = ExtResource( 20 )
+stretch_mode = 4
+
+[node name="Building4" type="TextureRect" parent="Page2/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 378.0
+margin_right = 490.0
+margin_bottom = 112.0
+texture = ExtResource( 18 )
+stretch_mode = 4
+
+[node name="RememberText" type="Label" parent="Page2/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 116.0
+margin_right = 536.0
+margin_bottom = 141.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "Only Bee Managers can go into buildings!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Page3" type="Panel" parent="."]
+margin_top = 1320.0
+margin_right = 580.0
+margin_bottom = 1960.0
+rect_min_size = Vector2( 580, 640 )
+custom_styles/panel = ExtResource( 24 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Page3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 22.0
+margin_top = 22.0
+margin_right = -22.0
+margin_bottom = -22.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page3/MarginContainer"]
+margin_right = 536.0
+margin_bottom = 596.0
+
+[node name="TypicalScenario1Title" type="Label" parent="Page3/MarginContainer/VBoxContainer"]
+margin_right = 536.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+text = "Typical Actions (1)"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page3/MarginContainer/VBoxContainer"]
+margin_top = 44.0
+margin_right = 536.0
+margin_bottom = 596.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="PointOneContainer" type="VBoxContainer" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 12.0
+margin_right = 536.0
+margin_bottom = 181.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointOneContainer"]
+margin_right = 536.0
+margin_bottom = 112.0
+alignment = 1
+
+[node name="BeeManager" type="TextureRect" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointOneContainer/HBoxContainer"]
+margin_left = 75.0
+margin_right = 171.0
+margin_bottom = 112.0
+texture = ExtResource( 12 )
+stretch_mode = 4
+
+[node name="Uses" type="Label" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointOneContainer/HBoxContainer"]
+margin_left = 175.0
+margin_right = 233.0
+margin_bottom = 112.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "uses"
+align = 1
+valign = 1
+
+[node name="Bee" type="TextureRect" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointOneContainer/HBoxContainer"]
+margin_left = 237.0
+margin_right = 317.0
+margin_bottom = 112.0
+texture = ExtResource( 10 )
+stretch_mode = 4
+
+[node name="In" type="Label" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointOneContainer/HBoxContainer"]
+margin_left = 321.0
+margin_right = 345.0
+margin_bottom = 112.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "in"
+align = 1
+valign = 1
+
+[node name="Building" type="TextureRect" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointOneContainer/HBoxContainer"]
+margin_left = 349.0
+margin_right = 461.0
+margin_bottom = 112.0
+texture = ExtResource( 20 )
+stretch_mode = 4
+
+[node name="PointOneLabel" type="Label" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointOneContainer"]
+margin_top = 116.0
+margin_right = 536.0
+margin_bottom = 169.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 5 )
+text = "1. Bee Managers use their bees to get resources from buildings."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="PointTwoContainer" type="VBoxContainer" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 185.0
+margin_right = 536.0
+margin_bottom = 366.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointTwoContainer"]
+margin_right = 536.0
+margin_bottom = 96.0
+alignment = 1
+
+[node name="BeeManager" type="TextureRect" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointTwoContainer/HBoxContainer"]
+margin_left = 47.0
+margin_right = 143.0
+margin_bottom = 96.0
+texture = ExtResource( 12 )
+stretch_mode = 4
+
+[node name="Resource" type="TextureRect" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointTwoContainer/HBoxContainer"]
+margin_left = 147.0
+margin_right = 195.0
+margin_bottom = 96.0
+texture = ExtResource( 27 )
+stretch_mode = 4
+
+[node name="Exchanges" type="Label" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointTwoContainer/HBoxContainer"]
+margin_left = 199.0
+margin_right = 337.0
+margin_bottom = 96.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "exchanges"
+align = 1
+valign = 1
+
+[node name="Money" type="TextureRect" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointTwoContainer/HBoxContainer"]
+margin_left = 341.0
+margin_right = 389.0
+margin_bottom = 96.0
+texture = ExtResource( 25 )
+stretch_mode = 4
+
+[node name="Candidate" type="TextureRect" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointTwoContainer/HBoxContainer"]
+margin_left = 393.0
+margin_right = 489.0
+margin_bottom = 96.0
+texture = ExtResource( 6 )
+stretch_mode = 4
+flip_h = true
+
+[node name="PointTwoText" type="Label" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointTwoContainer"]
+margin_top = 100.0
+margin_right = 536.0
+margin_bottom = 181.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 5 )
+text = "2. Bee Managers give ALL of their resources for ALL of their Candidate's money in a single exchange."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="PointThreeContainer" type="VBoxContainer" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 370.0
+margin_right = 536.0
+margin_bottom = 539.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointThreeContainer"]
+margin_right = 536.0
+margin_bottom = 112.0
+alignment = 1
+
+[node name="BeeManager" type="TextureRect" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointThreeContainer/HBoxContainer"]
+margin_left = 35.0
+margin_right = 131.0
+margin_bottom = 112.0
+texture = ExtResource( 12 )
+stretch_mode = 4
+
+[node name="Uses" type="Label" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointThreeContainer/HBoxContainer"]
+margin_left = 135.0
+margin_right = 193.0
+margin_bottom = 112.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "uses"
+align = 1
+valign = 1
+
+[node name="Money" type="TextureRect" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointThreeContainer/HBoxContainer"]
+margin_left = 197.0
+margin_right = 245.0
+margin_bottom = 112.0
+texture = ExtResource( 25 )
+stretch_mode = 4
+
+[node name="In" type="Label" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointThreeContainer/HBoxContainer"]
+margin_left = 249.0
+margin_right = 273.0
+margin_bottom = 112.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "in"
+align = 1
+valign = 1
+
+[node name="Building" type="TextureRect" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointThreeContainer/HBoxContainer"]
+margin_left = 277.0
+margin_right = 389.0
+margin_bottom = 112.0
+texture = ExtResource( 20 )
+stretch_mode = 4
+
+[node name="AndGets" type="Label" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointThreeContainer/HBoxContainer"]
+margin_left = 393.0
+margin_right = 449.0
+margin_bottom = 112.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "and
+gets"
+align = 1
+valign = 1
+
+[node name="Honeycomb" type="TextureRect" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointThreeContainer/HBoxContainer"]
+margin_left = 453.0
+margin_right = 501.0
+margin_bottom = 112.0
+texture = ExtResource( 26 )
+stretch_mode = 4
+
+[node name="PointThreeLabel" type="Label" parent="Page3/MarginContainer/VBoxContainer/VBoxContainer/PointThreeContainer"]
+margin_top = 116.0
+margin_right = 536.0
+margin_bottom = 169.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 5 )
+text = "3. Bee Managers spend their money to upgrade buildings and get honeycombs."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Page4" type="Panel" parent="."]
+margin_top = 1980.0
+margin_right = 580.0
+margin_bottom = 2620.0
+rect_min_size = Vector2( 580, 640 )
+custom_styles/panel = ExtResource( 24 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Page4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 22.0
+margin_top = 22.0
+margin_right = -22.0
+margin_bottom = -22.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page4/MarginContainer"]
+margin_right = 536.0
+margin_bottom = 596.0
+
+[node name="TypicalScenario2Title" type="Label" parent="Page4/MarginContainer/VBoxContainer"]
+margin_right = 536.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 4 )
+text = "Typical Actions (2)"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page4/MarginContainer/VBoxContainer"]
+margin_top = 44.0
+margin_right = 536.0
+margin_bottom = 596.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="PointFourContainer" type="VBoxContainer" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 14.0
+margin_right = 536.0
+margin_bottom = 167.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointFourContainer"]
+margin_right = 536.0
+margin_bottom = 96.0
+alignment = 1
+
+[node name="BeeManger" type="TextureRect" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointFourContainer/HBoxContainer"]
+margin_left = 99.0
+margin_right = 195.0
+margin_bottom = 96.0
+texture = ExtResource( 12 )
+stretch_mode = 4
+
+[node name="Uses" type="Label" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointFourContainer/HBoxContainer"]
+margin_left = 199.0
+margin_right = 257.0
+margin_bottom = 96.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "uses"
+align = 1
+valign = 1
+
+[node name="Honeycomb" type="TextureRect" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointFourContainer/HBoxContainer"]
+margin_left = 261.0
+margin_right = 309.0
+margin_bottom = 96.0
+texture = ExtResource( 26 )
+stretch_mode = 4
+
+[node name="In" type="Label" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointFourContainer/HBoxContainer"]
+margin_left = 313.0
+margin_right = 337.0
+margin_bottom = 96.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "in"
+align = 1
+valign = 1
+
+[node name="Beehive" type="TextureRect" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointFourContainer/HBoxContainer"]
+margin_left = 341.0
+margin_right = 437.0
+margin_bottom = 96.0
+texture = ExtResource( 15 )
+stretch_mode = 4
+
+[node name="PointFourLabel" type="Label" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointFourContainer"]
+margin_top = 100.0
+margin_right = 536.0
+margin_bottom = 153.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 5 )
+text = "4. Bee Managers spend honeycombs to hire more bees from beehives."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="PointFiveContainer" type="VBoxContainer" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 171.0
+margin_right = 536.0
+margin_bottom = 324.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointFiveContainer"]
+margin_right = 536.0
+margin_bottom = 96.0
+alignment = 1
+
+[node name="Candidate" type="TextureRect" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointFiveContainer/HBoxContainer"]
+margin_left = 44.0
+margin_right = 140.0
+margin_bottom = 96.0
+texture = ExtResource( 6 )
+stretch_mode = 4
+
+[node name="Gives" type="Label" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointFiveContainer/HBoxContainer"]
+margin_left = 144.0
+margin_right = 213.0
+margin_bottom = 96.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "gives"
+align = 1
+valign = 1
+
+[node name="Resource" type="TextureRect" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointFiveContainer/HBoxContainer"]
+margin_left = 217.0
+margin_right = 265.0
+margin_bottom = 96.0
+texture = ExtResource( 27 )
+stretch_mode = 4
+
+[node name="For" type="Label" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointFiveContainer/HBoxContainer"]
+margin_left = 269.0
+margin_right = 309.0
+margin_bottom = 96.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "for"
+align = 1
+valign = 1
+
+[node name="Money" type="TextureRect" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointFiveContainer/HBoxContainer"]
+margin_left = 313.0
+margin_right = 361.0
+margin_bottom = 96.0
+texture = ExtResource( 25 )
+stretch_mode = 4
+
+[node name="To" type="Label" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointFiveContainer/HBoxContainer"]
+margin_left = 365.0
+margin_right = 392.0
+margin_bottom = 96.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "to"
+align = 1
+valign = 1
+
+[node name="Critter" type="TextureRect" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointFiveContainer/HBoxContainer"]
+margin_left = 396.0
+margin_right = 492.0
+margin_bottom = 96.0
+texture = ExtResource( 17 )
+stretch_mode = 4
+flip_h = true
+
+[node name="PointFiveLabel" type="Label" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointFiveContainer"]
+margin_top = 100.0
+margin_right = 536.0
+margin_bottom = 153.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 5 )
+text = "5. Candidates trade resources to get more money."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="PointSixContainer" type="VBoxContainer" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 328.0
+margin_right = 536.0
+margin_bottom = 537.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointSixContainer"]
+margin_right = 536.0
+margin_bottom = 96.0
+alignment = 1
+
+[node name="Candidate" type="TextureRect" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointSixContainer/HBoxContainer"]
+margin_left = 45.0
+margin_right = 141.0
+margin_bottom = 96.0
+texture = ExtResource( 6 )
+stretch_mode = 4
+
+[node name="Gives" type="Label" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointSixContainer/HBoxContainer"]
+margin_left = 145.0
+margin_right = 214.0
+margin_bottom = 96.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "gives"
+align = 1
+valign = 1
+
+[node name="Money" type="TextureRect" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointSixContainer/HBoxContainer"]
+margin_left = 218.0
+margin_right = 266.0
+margin_bottom = 96.0
+texture = ExtResource( 25 )
+stretch_mode = 4
+
+[node name="ForVotes" type="Label" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointSixContainer/HBoxContainer"]
+margin_left = 270.0
+margin_right = 390.0
+margin_bottom = 96.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 5 )
+text = "for votes"
+align = 1
+valign = 1
+
+[node name="Pigeon" type="TextureRect" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointSixContainer/HBoxContainer"]
+margin_left = 394.0
+margin_right = 490.0
+margin_bottom = 96.0
+texture = ExtResource( 11 )
+stretch_mode = 4
+
+[node name="PointSixLabel" type="Label" parent="Page4/MarginContainer/VBoxContainer/VBoxContainer/PointSixContainer"]
+margin_top = 100.0
+margin_right = 536.0
+margin_bottom = 209.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 5 )
+text = "6. Candidates give money to pigeons to spread propaganda which increases the votes for their team in the area the pigeon is in."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="PageInfoContainer" type="HBoxContainer" parent="."]
+margin_top = 2640.0
+margin_right = 580.0
+margin_bottom = 2760.0
+alignment = 1
+
+[node name="PreviousPageButtonContainer" type="Control" parent="PageInfoContainer"]
+margin_right = 120.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
+mouse_filter = 1
+
+[node name="PreviousPageButton" parent="PageInfoContainer/PreviousPageButtonContainer" instance=ExtResource( 9 )]
+margin_left = 0.0
+margin_right = 120.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
+rect_rotation = -90.0
+rect_pivot_offset = Vector2( 60, 60 )
+custom_styles/focus = SubResource( 1 )
+
+[node name="PageLabel" type="Label" parent="PageInfoContainer"]
+margin_left = 124.0
+margin_right = 456.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "Page 1/4"
+align = 1
+valign = 1
+
+[node name="NextPageButtonContainer" type="Control" parent="PageInfoContainer"]
+margin_left = 460.0
+margin_right = 580.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
+mouse_filter = 1
+
+[node name="NextPageButton" parent="PageInfoContainer/NextPageButtonContainer" instance=ExtResource( 9 )]
+margin_left = 0.0
+margin_right = 120.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
+rect_rotation = 90.0
+rect_pivot_offset = Vector2( 60, 60 )
+custom_styles/focus = SubResource( 1 )
+
+[node name="BackButton" parent="." instance=ExtResource( 4 )]
+margin_top = 2780.0
+margin_right = 580.0
+margin_bottom = 2860.0
+custom_styles/focus = SubResource( 3 )
+text = "Back"

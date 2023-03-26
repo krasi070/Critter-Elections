@@ -1,0 +1,150 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scenes/ui/containers/ButtonGroupContainer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/buttons/ActionButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/entry_screen/entry_screen_state_select_team.gd" type="Script" id=3]
+[ext_resource path="res://scripts/entry_screen/entry_screen_state_pick_name.gd" type="Script" id=4]
+[ext_resource path="res://scripts/entry_screen/entry_screen.gd" type="Script" id=5]
+[ext_resource path="res://scripts/entry_screen/entry_screen_state_join_room.gd" type="Script" id=6]
+[ext_resource path="res://scripts/entry_screen/entry_screen_state_rejoin.gd" type="Script" id=7]
+[ext_resource path="res://assets/button_groups/StartNameButtonGroup.tres" type="ButtonGroup" id=8]
+[ext_resource path="res://assets/button_groups/EndNameButtonGroup.tres" type="ButtonGroup" id=9]
+[ext_resource path="res://scenes/ui/containers/PlayerInfoContainer.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/ui/containers/ReadonlyInputContainer.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/ui/RejoinSection.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/ui/Numpad.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/ui/containers/RulesContainer.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scripts/entry_screen/entry_screen_state_rules.gd" type="Script" id=18]
+
+[node name="EntryScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -290.0
+margin_right = 290.0
+margin_bottom = 930.0
+rect_min_size = Vector2( 580, 300 )
+custom_constants/separation = 20
+
+[node name="Padding" type="Control" parent="MainContainer"]
+margin_right = 580.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="PlayerInfoContainer" parent="MainContainer" instance=ExtResource( 10 )]
+visible = false
+margin_top = 30.0
+margin_right = 580.0
+margin_bottom = 60.0
+
+[node name="RoomKeyContainer" parent="MainContainer" instance=ExtResource( 11 )]
+visible = false
+margin_top = 30.0
+margin_right = 580.0
+margin_bottom = 116.0
+label_text = "Room Code"
+max_length = 4
+
+[node name="StartNamesContainer" parent="MainContainer" instance=ExtResource( 1 )]
+visible = false
+margin_top = 30.0
+margin_right = 580.0
+margin_bottom = 116.0
+label_text = "Pick the first half of your name:"
+button_group = ExtResource( 8 )
+button_labels = [ "Silly", "Cool", "Hot" ]
+
+[node name="EndNamesContainer" parent="MainContainer" instance=ExtResource( 1 )]
+visible = false
+margin_top = 30.0
+margin_right = 580.0
+margin_bottom = 116.0
+label_text = "Pick the second half of your name:"
+button_group = ExtResource( 9 )
+button_labels = [ "John", "Sally", "Bill" ]
+
+[node name="Numpad" parent="MainContainer" instance=ExtResource( 13 )]
+margin_top = 30.0
+margin_right = 580.0
+margin_bottom = 648.0
+
+[node name="RejoinSection" parent="MainContainer" instance=ExtResource( 12 )]
+visible = false
+margin_top = 30.0
+margin_right = 580.0
+margin_bottom = 648.0
+
+[node name="RulesContainer" parent="MainContainer" instance=ExtResource( 14 )]
+visible = false
+
+[node name="JoinRoomButton" parent="MainContainer" instance=ExtResource( 2 )]
+margin_top = 668.0
+margin_right = 580.0
+margin_bottom = 748.0
+text = "Join Room"
+
+[node name="ConfirmNameButton" parent="MainContainer" instance=ExtResource( 2 )]
+visible = false
+margin_top = 818.0
+margin_right = 580.0
+margin_bottom = 898.0
+text = "Confirm Name"
+
+[node name="StartGameButton" parent="MainContainer" instance=ExtResource( 2 )]
+margin_top = 768.0
+margin_right = 580.0
+margin_bottom = 848.0
+text = "Start Game"
+
+[node name="LeaveTeamButton" parent="MainContainer" instance=ExtResource( 2 )]
+visible = false
+margin_top = 1018.0
+margin_right = 580.0
+margin_bottom = 1098.0
+text = "Leave Team"
+
+[node name="BackButton" parent="MainContainer" instance=ExtResource( 2 )]
+visible = false
+margin_top = 1118.0
+margin_right = 580.0
+margin_bottom = 1198.0
+text = "Back"
+
+[node name="RulesButton" parent="MainContainer" instance=ExtResource( 2 )]
+margin_top = 868.0
+margin_right = 580.0
+margin_bottom = 948.0
+text = "Rules"
+
+[node name="MessageLabel" type="Label" parent="MainContainer"]
+margin_top = 968.0
+margin_right = 580.0
+margin_bottom = 998.0
+custom_colors/font_color = Color( 0.941176, 0.537255, 0.364706, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+text = "Trying to connect to server..."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="States" type="Node" parent="."]
+
+[node name="JoinRoom" type="Node" parent="States"]
+script = ExtResource( 6 )
+
+[node name="Rejoin" type="Node" parent="States"]
+script = ExtResource( 7 )
+
+[node name="PickName" type="Node" parent="States"]
+script = ExtResource( 4 )
+
+[node name="SelectTeam" type="Node" parent="States"]
+script = ExtResource( 3 )
+
+[node name="Rules" type="Node" parent="States"]
+script = ExtResource( 18 )

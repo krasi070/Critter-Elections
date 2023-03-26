@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/styles/num_button/NumpadButtonHoverStyle.tres" type="StyleBox" id=1]
+[ext_resource path="res://assets/styles/num_button/NumpadButtonNormalStyle.tres" type="StyleBox" id=2]
+[ext_resource path="res://assets/styles/num_button/NumpadButtonDisabledStyle.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/fonts/nokiafc22.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="ButtonGroupButton" type="Button"]
+margin_right = 82.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+custom_colors/font_color_disabled = Color( 1, 0.894118, 0.533333, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.894118, 0.533333, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = ExtResource( 3 )
+custom_styles/normal = ExtResource( 2 )
+toggle_mode = true
+text = "Button"
+clip_text = true
+expand_icon = true

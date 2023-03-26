@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=2]
+
+[ext_resource path="res://assets/sprites/action_button/action_button_disabled.png" type="Texture" id=1]
+
+[resource]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 220, 67 )
+margin_left = 28.0
+margin_right = 28.0
+margin_top = 20.0
+margin_bottom = 21.0

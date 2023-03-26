@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/fonts/nokiafc22.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/styles/num_button/NumpadButtonHoverStyle.tres" type="StyleBox" id=2]
+[ext_resource path="res://assets/styles/num_button/NumpadButtonNormalStyle.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/styles/num_button/NumpadButtonPressedStyle.tres" type="StyleBox" id=4]
+[ext_resource path="res://scripts/ui/rejoin_button.gd" type="Script" id=5]
+[ext_resource path="res://assets/styles/num_button/NumpadButtonDisabledStyle.tres" type="StyleBox" id=6]
+[ext_resource path="res://assets/sprites/player_characters/team_a_campaigner.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="RejoinButton" type="Button"]
+margin_right = 368.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 0.498039 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 3 )
+icon = ExtResource( 7 )
+expand_icon = true
+script = ExtResource( 5 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 76.0
+margin_top = 21.0
+margin_right = -21.0
+margin_bottom = -21.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MarginContainer"]
+margin_top = 16.0
+margin_right = 271.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 2 )
+text = "Jobless Teenager"
+align = 1
+valign = 1
+autowrap = true

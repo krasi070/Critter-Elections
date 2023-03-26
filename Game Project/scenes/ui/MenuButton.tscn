@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/styles/MenuButtonNormalStyle.tres" type="StyleBox" id=1]
+[ext_resource path="res://assets/styles/MenuButtonHoveredStyle.tres" type="StyleBox" id=2]
+[ext_resource path="res://assets/styles/MenuButtonDisabledStyle.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/styles/MenuButtonPressedStyle.tres" type="StyleBox" id=4]
+[ext_resource path="res://scripts/ui_elements/menu_button.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="PlayButton" type="Button"]
+margin_right = 1140.0
+margin_bottom = 173.0
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 0.686275, 0.976471, 0.854902, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = ExtResource( 3 )
+custom_styles/normal = ExtResource( 1 )
+text = "Play"
+script = ExtResource( 5 )

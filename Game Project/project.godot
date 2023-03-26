@@ -1,0 +1,222 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "HBoxContainer",
+"class": "CandidateProjectionBarContainer",
+"language": "GDScript",
+"path": "res://scripts/ui_elements/candidate_projection_bar_container.gd"
+}, {
+"base": "HBoxContainer",
+"class": "ElectionLoserContainer",
+"language": "GDScript",
+"path": "res://scripts/ui_elements/election_loser_container.gd"
+}, {
+"base": "MapObject",
+"class": "EventCharacter",
+"language": "GDScript",
+"path": "res://scripts/map/event_characer.gd"
+}, {
+"base": "Control",
+"class": "FadeOutText",
+"language": "GDScript",
+"path": "res://scripts/map/fade_out_text.gd"
+}, {
+"base": "MapObject",
+"class": "GatheringSpot",
+"language": "GDScript",
+"path": "res://scripts/map/gathering_spot.gd"
+}, {
+"base": "Reference",
+"class": "GutHookScript",
+"language": "GDScript",
+"path": "res://addons/gut/hook_script.gd"
+}, {
+"base": "Node",
+"class": "GutTest",
+"language": "GDScript",
+"path": "res://addons/gut/test.gd"
+}, {
+"base": "MapObject",
+"class": "HiringSpot",
+"language": "GDScript",
+"path": "res://scripts/map/hiring_spot.gd"
+}, {
+"base": "Node2D",
+"class": "MapObject",
+"language": "GDScript",
+"path": "res://scripts/map/map_object.gd"
+}, {
+"base": "HBoxContainer",
+"class": "OverallCandidateProjectionContainer",
+"language": "GDScript",
+"path": "res://scripts/ui_elements/overall_candidate_projection_container.gd"
+}, {
+"base": "MapObject",
+"class": "PickableResource",
+"language": "GDScript",
+"path": "res://scripts/map/pickable_resource.gd"
+}, {
+"base": "MapObject",
+"class": "PlayerCharacter",
+"language": "GDScript",
+"path": "res://scripts/map/player_character.gd"
+}, {
+"base": "CanvasLayer",
+"class": "PredictionResultsOverlay",
+"language": "GDScript",
+"path": "res://scripts/screens/prediction_results_overlay.gd"
+}, {
+"base": "NinePatchRect",
+"class": "ResultsRect",
+"language": "GDScript",
+"path": "res://scripts/ui_elements/results_rect.gd"
+}, {
+"base": "HBoxContainer",
+"class": "SettingContainer",
+"language": "GDScript",
+"path": "res://scripts/ui_elements/setting_container.gd"
+}, {
+"base": "Control",
+"class": "VolumeSlider",
+"language": "GDScript",
+"path": "res://scripts/ui_elements/volume_slider.gd"
+} ]
+_global_script_class_icons={
+"CandidateProjectionBarContainer": "",
+"ElectionLoserContainer": "",
+"EventCharacter": "",
+"FadeOutText": "",
+"GatheringSpot": "",
+"GutHookScript": "",
+"GutTest": "",
+"HiringSpot": "",
+"MapObject": "",
+"OverallCandidateProjectionContainer": "",
+"PickableResource": "",
+"PlayerCharacter": "",
+"PredictionResultsOverlay": "",
+"ResultsRect": "",
+"SettingContainer": "",
+"VolumeSlider": ""
+}
+
+[application]
+
+config/name="Game Project"
+run/main_scene="res://scenes/screens/TitleScreen.tscn"
+
+[autoload]
+
+Server="*res://scripts/server/server.gd"
+MatchRoomManager="*res://scripts/server/match_room_manager.gd"
+MovementManager="*res://scripts/server/movement_manager.gd"
+Enums="*res://scripts/enums.gd"
+Paths="*res://scripts/helpers/paths.gd"
+Settings="*res://scripts/settings.gd"
+AudioController="*res://scenes/globals/AudioController.tscn"
+WorldLevelStats="*res://scripts/helpers/world_level_stats.gd"
+MapData="*res://scripts/map/map_data.gd"
+DebugHelper="*res://scenes/globals/DebugHelper.tscn"
+WorkerHelper="*res://scripts/helpers/worker_helper.gd"
+PauseOverlay="*res://scenes/globals/PauseOverlay.tscn"
+
+[debug]
+
+gdscript/warnings/return_value_discarded=false
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/test_width=1056
+window/size/test_height=594
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/gut/plugin.cfg" )
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+theme/custom_font="res://assets/fonts/NokiaCellphoneDynamicFont.tres"
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[input]
+
+debug_enter={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777221,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+debug_toggle={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777240,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+debug_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+debug_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+toggle_pause={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+continue={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[mono]
+
+project/assembly_name="ProjectRoomClient"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false

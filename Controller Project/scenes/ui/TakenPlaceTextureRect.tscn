@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/ui/taken_place_texture_rect.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/ui_elements/progress_bar_progress.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/ui_elements/progress_bar_over.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/ui_elements/progress_bar_under.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/workers/nine_to_five_bee.png" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/nokiafc22.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[node name="TakenPlaceTextureRect" type="TextureRect"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 120, 120 )
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 2 )
+
+[node name="TeamColorBackground" type="ColorRect" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.301961, 0.34902, 0.439216, 1 )
+
+[node name="ResourceMultiplierLabel" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -15.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "x3"
+align = 2
+valign = 2
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -3.0
+margin_top = 102.0
+margin_right = 64.0
+margin_bottom = 17.0
+rect_scale = Vector2( 1, 1.2 )
+value = 50.0
+texture_under = ExtResource( 5 )
+texture_over = ExtResource( 4 )
+texture_progress = ExtResource( 3 )
+texture_progress_offset = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

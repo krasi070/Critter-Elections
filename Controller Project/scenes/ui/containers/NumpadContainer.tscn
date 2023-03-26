@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/ui/buttons/SmallButton.tscn" type="PackedScene" id=1]
+
+[node name="NumpadContainer" type="GridContainer"]
+margin_right = 500.0
+custom_constants/vseparation = 5
+custom_constants/hseparation = 10
+columns = 3
+
+[node name="Button1" parent="." instance=ExtResource( 1 )]
+margin_bottom = 84.0
+text = "1"
+
+[node name="Button2" parent="." instance=ExtResource( 1 )]
+margin_left = 170.0
+margin_right = 330.0
+margin_bottom = 84.0
+text = "2"
+
+[node name="Button3" parent="." instance=ExtResource( 1 )]
+margin_left = 340.0
+margin_right = 500.0
+margin_bottom = 84.0
+text = "3"
+
+[node name="Button4" parent="." instance=ExtResource( 1 )]
+margin_top = 89.0
+margin_bottom = 173.0
+text = "4"
+
+[node name="Button5" parent="." instance=ExtResource( 1 )]
+margin_left = 170.0
+margin_top = 89.0
+margin_right = 330.0
+margin_bottom = 173.0
+text = "5"
+
+[node name="Button6" parent="." instance=ExtResource( 1 )]
+margin_left = 340.0
+margin_top = 89.0
+margin_right = 500.0
+margin_bottom = 173.0
+text = "6"
+
+[node name="Button7" parent="." instance=ExtResource( 1 )]
+margin_top = 178.0
+margin_bottom = 262.0
+text = "7"
+
+[node name="Button8" parent="." instance=ExtResource( 1 )]
+margin_left = 170.0
+margin_top = 178.0
+margin_right = 330.0
+margin_bottom = 262.0
+text = "8"
+
+[node name="Button9" parent="." instance=ExtResource( 1 )]
+margin_left = 340.0
+margin_top = 178.0
+margin_right = 500.0
+margin_bottom = 262.0
+text = "9"
+
+[node name="ButtonClear" parent="." instance=ExtResource( 1 )]
+margin_top = 267.0
+margin_bottom = 351.0
+text = "CLR"
+
+[node name="Button0" parent="." instance=ExtResource( 1 )]
+margin_left = 170.0
+margin_top = 267.0
+margin_right = 330.0
+margin_bottom = 351.0
+text = "0"
+
+[node name="ButtonBackspace" parent="." instance=ExtResource( 1 )]
+margin_left = 340.0
+margin_top = 267.0
+margin_right = 500.0
+margin_bottom = 351.0
+text = "BCK"
+
+[node name="EmptySpace" type="Control" parent="."]
+visible = false
+margin_top = 300.0
+margin_right = 160.0
+margin_bottom = 340.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_vertical = 3

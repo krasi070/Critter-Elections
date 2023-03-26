@@ -1,0 +1,194 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/fonts/nokiafc22.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/screens/room_creation_screen.gd" type="Script" id=2]
+[ext_resource path="res://assets/styles/TextEditStyle.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/sprites/qr_code.png" type="Texture" id=4]
+[ext_resource path="res://scenes/ui/MenuButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/ui/SettingContainer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/WaterBackground.tscn" type="PackedScene" id=7]
+
+[sub_resource type="DynamicFont" id=3]
+size = 88
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 48
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="Theme" id=11]
+VScrollBar/styles/grabber = SubResource( 6 )
+VScrollBar/styles/grabber_highlight = SubResource( 7 )
+VScrollBar/styles/grabber_pressed = SubResource( 8 )
+VScrollBar/styles/scroll = SubResource( 9 )
+VScrollBar/styles/scroll_focus = SubResource( 10 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 40
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_bottom = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[node name="RoomCreationScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="WaterBackground" parent="." instance=ExtResource( 7 )]
+
+[node name="FadeRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.54902 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 60.0
+margin_top = 60.0
+margin_right = -60.0
+margin_bottom = -60.0
+
+[node name="MainContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 1800.0
+margin_bottom = 960.0
+custom_constants/separation = 60
+
+[node name="JoinGameInfoContainer" type="VBoxContainer" parent="MarginContainer/MainContainer"]
+margin_right = 600.0
+margin_bottom = 960.0
+rect_min_size = Vector2( 600, 880 )
+custom_constants/separation = 20
+alignment = 1
+
+[node name="RoomKeyLabel" type="RichTextLabel" parent="MarginContainer/MainContainer/JoinGameInfoContainer"]
+margin_right = 600.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 400, 112 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center][wave amp=50 freq=6]MXZY[/wave][/center]"
+text = "MXZY"
+
+[node name="QRCode" type="TextureRect" parent="MarginContainer/MainContainer/JoinGameInfoContainer"]
+margin_top = 132.0
+margin_right = 600.0
+margin_bottom = 412.0
+rect_min_size = Vector2( 280, 280 )
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="JoinInfoLabel" type="Label" parent="MarginContainer/MainContainer/JoinGameInfoContainer"]
+margin_top = 432.0
+margin_right = 600.0
+margin_bottom = 515.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 5 )
+text = "Scan to join or go to
+critterelections.hopto.org"
+align = 1
+autowrap = true
+
+[node name="MapSizeSettingContainer" parent="MarginContainer/MainContainer/JoinGameInfoContainer" instance=ExtResource( 6 )]
+margin_top = 535.0
+margin_bottom = 615.0
+
+[node name="NumberOfRoundsSettingContainer" parent="MarginContainer/MainContainer/JoinGameInfoContainer" instance=ExtResource( 6 )]
+margin_top = 635.0
+margin_bottom = 715.0
+
+[node name="RoundDurationSettingContainer" parent="MarginContainer/MainContainer/JoinGameInfoContainer" instance=ExtResource( 6 )]
+margin_top = 735.0
+margin_bottom = 815.0
+
+[node name="ExitRoomButtonContainer" type="VBoxContainer" parent="MarginContainer/MainContainer/JoinGameInfoContainer"]
+margin_top = 835.0
+margin_right = 600.0
+margin_bottom = 960.0
+size_flags_vertical = 3
+alignment = 2
+
+[node name="ExitRoomButton" parent="MarginContainer/MainContainer/JoinGameInfoContainer/ExitRoomButtonContainer" instance=ExtResource( 5 )]
+margin_top = 25.0
+margin_right = 600.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 400, 100 )
+size_flags_vertical = 1
+text = "Exit Room"
+
+[node name="JoinedPlayersContainer" type="VBoxContainer" parent="MarginContainer/MainContainer"]
+margin_left = 660.0
+margin_right = 1800.0
+margin_bottom = 960.0
+rect_min_size = Vector2( 800, 764 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="JoinedPlayersLabel" type="Label" parent="MarginContainer/MainContainer/JoinedPlayersContainer"]
+margin_right = 1140.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+custom_fonts/font = SubResource( 15 )
+text = "Joined Players"
+align = 1
+valign = 2
+
+[node name="PlayerInfoTextEdit" type="TextEdit" parent="MarginContainer/MainContainer/JoinedPlayersContainer"]
+margin_top = 120.0
+margin_right = 1140.0
+margin_bottom = 960.0
+rect_min_size = Vector2( 400, 500 )
+size_flags_vertical = 3
+theme = SubResource( 11 )
+custom_colors/line_number_color = Color( 0.85098, 0.835294, 0.796078, 1 )
+custom_colors/font_color_readonly = Color( 0.964706, 0.862745, 0.580392, 1 )
+custom_fonts/font = SubResource( 13 )
+custom_styles/read_only = ExtResource( 3 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/normal = ExtResource( 3 )
+custom_styles/completion = ExtResource( 3 )
+text = "vgb
+Jobless Teenager (Room Master)
+bhjnkm
+bhjnkm
+bhjnkm
+bhjnkm
+
+Jobless Teenager (Room Master)"
+readonly = true
+show_line_numbers = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/styles/dir_button/DirectionalButtonNormalStyle.tres" type="StyleBox" id=1]
+[ext_resource path="res://assets/styles/dir_button/DirectionalButtonHoveredStyle.tres" type="StyleBox" id=2]
+[ext_resource path="res://assets/styles/dir_button/DirectionalButtonPressedStyle.tres" type="StyleBox" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="DirectionalButton" type="Button"]
+margin_left = 210.0
+margin_right = 370.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 160 )
+rect_pivot_offset = Vector2( 80, 80 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )

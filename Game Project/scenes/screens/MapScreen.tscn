@@ -1,0 +1,193 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://scripts/screens/map_screen.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/backgrounds/waves2.png" type="Texture" id=3]
+[ext_resource path="res://scenes/PredictionResultsOverlay.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/backgrounds/waves1.png" type="Texture" id=5]
+[ext_resource path="res://assets/shaders/WaveShader.tres" type="Shader" id=6]
+[ext_resource path="res://assets/fonts/nokiafc22.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/sprites/sailboat_spritesheet.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/ui_elements/blue_box.png" type="Texture" id=9]
+[ext_resource path="res://assets/TileSet.tres" type="TileSet" id=10]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 6 )
+shader_param/wave_speed = 1.0
+shader_param/wave_freq = 1.0
+shader_param/wave_width = 1.0
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 6 )
+shader_param/wave_speed = 1.0
+shader_param/wave_freq = 2.0
+shader_param/wave_width = 1.0
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 8 )
+region = Rect2( 192, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 8 )
+region = Rect2( 384, 0, 192, 192 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 8 )
+region = Rect2( 576, 0, 192, 192 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "sail",
+"speed": 4.0
+} ]
+
+[sub_resource type="DynamicFont" id=10]
+size = 24
+outline_size = 3
+outline_color = Color( 0.439216, 0.141176, 0.0470588, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 32
+outline_size = 3
+outline_color = Color( 0.439216, 0.141176, 0.0470588, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 48
+outline_size = 3
+outline_color = Color( 0, 0, 0, 0.498039 )
+extra_spacing_char = 2
+font_data = ExtResource( 7 )
+
+[node name="MapScreen" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="WaterBackground" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="WaterColor" type="ColorRect" parent="WaterBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1920, 1080 )
+color = Color( 0.321569, 0.815686, 0.768627, 1 )
+
+[node name="BottomWaves" type="TextureRect" parent="WaterBackground"]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1920.0
+margin_bottom = 1096.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="TopWaves" type="TextureRect" parent="WaterBackground"]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1920.0
+margin_bottom = 1096.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="TileMapLayers" type="Node2D" parent="."]
+
+[node name="ShadowLayer" type="TileMap" parent="TileMapLayers"]
+modulate = Color( 0, 0, 0, 0.392157 )
+position = Vector2( 16, 16 )
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 96, 96 )
+format = 1
+
+[node name="GroundLayer" type="TileMap" parent="TileMapLayers"]
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 96, 96 )
+format = 1
+
+[node name="InteractablesYSort" type="YSort" parent="."]
+
+[node name="PlayersYSort" type="YSort" parent="."]
+
+[node name="SailboatSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 96, 86 )
+frames = SubResource( 8 )
+animation = "sail"
+frame = 2
+playing = true
+
+[node name="RoundLabel" type="Label" parent="SailboatSprite"]
+margin_left = -25.0
+margin_top = -74.0
+margin_right = 59.0
+margin_bottom = -24.0
+custom_fonts/font = SubResource( 10 )
+text = "R1"
+valign = 1
+
+[node name="TimeLabel" type="Label" parent="SailboatSprite"]
+margin_left = -25.0
+margin_top = -37.0
+margin_right = 59.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 9 )
+text = "222"
+valign = 1
+
+[node name="RoomKeyBackgroundTextureRect" type="TextureRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0.705882 )
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 921.0
+margin_right = 240.0
+margin_bottom = 1040.0
+texture = ExtResource( 9 )
+
+[node name="MarginContainer" type="MarginContainer" parent="RoomKeyBackgroundTextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 22.0
+margin_top = 22.0
+margin_right = -22.0
+margin_bottom = -22.0
+
+[node name="RoomKeyLabel" type="Label" parent="RoomKeyBackgroundTextureRect/MarginContainer"]
+margin_right = 156.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+text = "1789"
+align = 1
+valign = 1
+
+[node name="RoomKeyBackground" type="ColorRect" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 940.0
+margin_right = 240.0
+margin_bottom = 1040.0
+rect_min_size = Vector2( 200, 100 )
+color = Color( 1, 1, 1, 0.784314 )
+
+[node name="RoomKeyLabel" type="Label" parent="RoomKeyBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+text = "1789"
+align = 1
+valign = 1
+
+[node name="PredictionResultsOverlay" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="GameTimer" type="Timer" parent="."]
+one_shot = true

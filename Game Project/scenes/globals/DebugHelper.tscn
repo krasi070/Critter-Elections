@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/helpers/debug_helper.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/Roboto-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=3]
+size = 28
+extra_spacing_bottom = -8
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+extra_spacing_bottom = -8
+font_data = ExtResource( 2 )
+
+[node name="DebugHelper" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 910.0
+margin_top = 620.0
+margin_right = -50.0
+margin_bottom = -50.0
+
+[node name="BackgroundRect" type="ColorRect" parent="MarginContainer"]
+margin_right = 960.0
+margin_bottom = 410.0
+color = Color( 0, 0, 0, 0.25098 )
+
+[node name="Margin" type="MarginContainer" parent="MarginContainer/BackgroundRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/BackgroundRect/Margin"]
+margin_right = 920.0
+margin_bottom = 370.0
+
+[node name="ConsoleText" type="TextEdit" parent="MarginContainer/BackgroundRect/Margin/VBoxContainer"]
+margin_right = 920.0
+margin_bottom = 306.0
+size_flags_vertical = 3
+custom_colors/line_number_color = Color( 1, 1, 1, 0.498039 )
+custom_colors/font_color_readonly = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/read_only = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+readonly = true
+show_line_numbers = true
+wrap_enabled = true
+
+[node name="InputLine" type="LineEdit" parent="MarginContainer/BackgroundRect/Margin/VBoxContainer"]
+margin_top = 310.0
+margin_right = 920.0
+margin_bottom = 370.0
+rect_min_size = Vector2( 0, 60 )
+custom_fonts/font = SubResource( 4 )

@@ -1,0 +1,14 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform float horizontal_scroll_speed;
+uniform float vertical_scroll_speed;
+
+void fragment() {
+	vec2 shifted_uv = UV;
+	// Remove the cos and sin to just have a normal scrolling background
+	shifted_uv += vec2(horizontal_scroll_speed * TIME, vertical_scroll_speed * TIME);
+	COLOR = texture(TEXTURE, shifted_uv);
+}"

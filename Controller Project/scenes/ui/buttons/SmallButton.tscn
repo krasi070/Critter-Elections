@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/styles/num_button/NumpadButtonHoverStyle.tres" type="StyleBox" id=1]
+[ext_resource path="res://assets/styles/num_button/NumpadButtonNormalStyle.tres" type="StyleBox" id=2]
+[ext_resource path="res://assets/styles/num_button/NumpadButtonPressedStyle.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/styles/num_button/NumpadButtonDisabledStyle.tres" type="StyleBox" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="SmallButton" type="Button"]
+margin_right = 160.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 84 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 0.498039 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 2 )
+text = "Button"
