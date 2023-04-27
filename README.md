@@ -1,1 +1,1 @@
-# Critter-Elections
+# Critter Elections
