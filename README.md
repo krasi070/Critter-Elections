@@ -1,7 +1,7 @@
 # Critter Elections
 <h3>itch.io Link</h3>
 <p>
-You can play the game here: https://krasi0707.itch.io/critter-elections
+You can download the game from here: https://krasi0707.itch.io/critter-elections
 </p>
 <h3>Description</h3>
 <p>
